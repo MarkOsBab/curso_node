@@ -1,9 +1,9 @@
 class User {
-    constructor(fname, lname){
+    constructor(fname, lname, books, pets){
         this.fname = fname;
         this.lname = lname;
-        this.books = [];
-        this.pets = [];
+        this.books = books;
+        this.pets = pets;
     }
 
     getFullName()
@@ -23,16 +23,17 @@ class User {
 
     addBook(name, author)
     {
-        this.books.push({BookName: name, BookAuthor:author});
+        this.books.push({name: name, author:author});
     }
 
     getBookName()
     {
-        return this.books.map((b)=>b.name);
+        console.log(this.books);
+        return this.books.map((b)=>{b});
     }
 }
 
-const user = new User('Marcos', 'García');
+const user = new User('Marcos', 'García', [], []);
 user.getFullName();
 user.addPet('Ruffo');
 user.countPets();
